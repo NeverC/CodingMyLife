@@ -7,7 +7,7 @@ package never.data_structure.search;
 
 public class BinarySearch {
 
-	private static int source[] = {1, 3, 5, 7, 9 };
+	private static int source[] = { 1, 3, 5, 7, 9 };
 	private static int target = 1;
 
 	public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class BinarySearch {
 		if (index == -1) {
 			System.out.println("Not found!");
 		} else {
-			System.out.println("Found, the index returned is " + index + "!");		
+			System.out.println("Found, the index returned is " + index + "!");
 		}
 	}
 
@@ -26,21 +26,22 @@ public class BinarySearch {
 		int start = 0;
 		int end = source.length;
 
-		if(end == 0){
+		//如果source为空，直接返回-1
+		if (end == 0) {
 			return -1;
 		}
 		while (end >= start) {
+			// 防止end与start相加之后超过int的最大值
 			int middle = start + (end - start) / 2;
 			int temp = source[middle];
-			if(temp > target){
+			if (temp > target) {
 				end = middle - 1;
-			}else if(temp < target){
+			} else if (temp < target) {
 				start = middle + 1;
-			}else{
+			} else {
 				return middle;
 			}
 		}
-
 		return -1;
 	}
 
