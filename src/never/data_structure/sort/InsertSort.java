@@ -34,14 +34,13 @@ public class InsertSort {
 		}
 
 		for (int i = 1; i < source.length; i++) {
-			for (int j = i; j > 0; j--) {
-				if (source[j] < source[j - 1]) {
-					int temp = source[j];
-					source[j] = source[j - 1];
-					source[j - 1] = temp;
-				}
+			int j = i;
+			int temp = source[j];
+			while (j > 0 && temp < source[j - 1]) {
+				source[j] = source[j - 1];
+				j--;
 			}
-
+			source[j] = temp;
 		}
 	}
 
