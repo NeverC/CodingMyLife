@@ -1,7 +1,9 @@
-/**InsertSort.java
- * never.data_structure.sort
- * Apr 1, 2014 5:46:05 PM 
- * xzllc2010@gmail.com
+/**  
+ * @Title: InsertSort.java
+ * @Package never.data_structure.sort
+ * @author "Never" xzllc2010#gmail.com  
+ * @date Apr 1, 2014 5:46:05 PM 
+ * @Description: TODO
  */
 package never.data_structure.sort;
 
