@@ -9,9 +9,12 @@ package never.data_structure.search;
 
 public class KMP {
 
+	private static String source = "abcdeababcabdabfabg";
+	private static String pattern = "abcde";
+	
 	public static void main(String[] args) {
-		String sourceString = "";
 
+		System.out.println(search(source, pattern));
 	}
 
 	// create partial match table
