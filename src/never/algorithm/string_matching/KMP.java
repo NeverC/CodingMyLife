@@ -21,11 +21,12 @@ public class KMP {
 	private static HashSet<String> suffixSet = new HashSet<String>();
 
 	public static void main(String[] args) {
-		//System.out.println(search(source, pattern));
+		// System.out.println(search(source, pattern));
 		createPMT(pattern);
-		for (int i = 0; i < partialMatchTable.length; i++) {
-			System.out.println(partialMatchTable[i]);
-		}
+		// for (int i = 0; i < partialMatchTable.length; i++) {
+		// System.out.println(partialMatchTable[i]);
+		// }
+		System.out.println(search(source, pattern));
 	}
 
 	// create partial match table
@@ -38,7 +39,7 @@ public class KMP {
 			Iterator<String> it = prefixSet.iterator();
 			while (it.hasNext()) {
 				int len = it.next().length();
-				if(len > partialMatchTable[i]){
+				if (len > partialMatchTable[i]) {
 					partialMatchTable[i] = len;
 				}
 			}
@@ -50,7 +51,7 @@ public class KMP {
 		for (int i = 0; i < str.length() - 1; i++) {
 			prefixSet.add(str.substring(0, i + 1));
 		}
-		
+
 		for (int i = 1; i < str.length(); i++) {
 			suffixSet.add(str.substring(i, str.length()));
 		}
@@ -60,6 +61,23 @@ public class KMP {
 	public static int search(String source, String pattern) {
 		int index = -1;
 
+		int sLen = source.length();
+		int pLen = pattern.length();
+
+		int i = 0;
+		while (i <= sLen - pLen) {
+			int j = 0;
+			while (j < pLen && source.charAt(i + j) == pattern.charAt(j)) {
+				j++;
+			}
+			if (j == pLen) {
+				return i;
+			} else if (j == 0) {
+				i++;
+			} else {
+				i = i + j - 1 - partialMatchTable[j - 1];
+			}
+		}
 		return index;
 	}
 
