@@ -16,11 +16,10 @@ public class SingleNumber {
 	private static int[] A = { 1, 2, 3, 4, 5, 4, 3, 2, 1 };
 
 	public static void main(String[] args) {
-		SingleNumber sn = new SingleNumber();
-		System.out.println(sn.singleNumber(A));
+		System.out.println(singleNumber(A));
 	}
 
-	public int singleNumber(int[] A) {
+	public static int singleNumber(int[] A) {
 		int result = 0;
 		Set<Integer> set = new HashSet<Integer>();
 		for (int i = 0; i < A.length; i++) {

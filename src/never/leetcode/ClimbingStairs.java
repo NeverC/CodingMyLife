@@ -10,12 +10,11 @@ package never.leetcode;
 public class ClimbingStairs {
 
 	public static void main(String[] args) {
-		ClimbingStairs cs = new ClimbingStairs();
-		System.out.println(cs.climbStairs(10));
+		System.out.println(climbStairs(10));
 	}
 
 	/* not recursion */
-	public int climbStairs(int n) {
+	public static int climbStairs(int n) {
 		int result = 0;
 		if (n == 1) {
 			return 1;

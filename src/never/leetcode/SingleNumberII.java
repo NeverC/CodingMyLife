@@ -16,11 +16,10 @@ public class SingleNumberII {
 	private static int[] A = { 1, 2, 3, 4, 5, 4, 3, 2, 1, 1, 2, 3, 4 };
 
 	public static void main(String[] args) {
-		SingleNumberII sn = new SingleNumberII();
-		System.out.println(sn.singleNumber(A));
+		System.out.println(singleNumber(A));
 	}
 
-	public int singleNumber(int[] A) {
+	public static int singleNumber(int[] A) {
 		int result = 0;
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int i = 0; i < A.length; i++) {
