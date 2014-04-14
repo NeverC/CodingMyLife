@@ -7,8 +7,8 @@ package never.data_structure.search;
 
 public class BinarySearch {
 
-	private static int source[] = { 1, 3, 5, 7, 9 };
-	private static int target = 1;
+	private static int source[] = { 1};
+	private static int target = 2;
 
 	public static void main(String[] args) {
 
@@ -24,7 +24,7 @@ public class BinarySearch {
 	public static int search(int[] source, int target) {
 
 		int start = 0;
-		int end = source.length;
+		int end = source.length - 1;
 
 		//如果source为空，直接返回-1
 		if (end == 0) {
